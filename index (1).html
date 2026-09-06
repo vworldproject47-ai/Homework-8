@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Form with Validation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Contact Form</h1>
+    <p>Fill out the form below. Fields marked required must be completed.</p>
+
+    <div id="form-status" role="alert"></div>
+
+    <form id="contact-form" novalidate>
+
+      <div class="form-field" id="name-field">
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" required aria-describedby="name-error">
+        <span class="error-text" id="name-error">Please enter your name.</span>
+      </div>
+
+      <div class="form-field" id="email-field">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" required aria-describedby="email-error">
+        <span class="error-text" id="email-error">Please enter a valid email address (must contain @).</span>
+      </div>
+
+      <div class="form-field" id="phone-field">
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone" aria-describedby="phone-error">
+        <span class="error-text" id="phone-error">Please enter a valid phone number.</span>
+      </div>
+
+      <div class="form-field" id="message-field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required aria-describedby="message-error"></textarea>
+        <span class="error-text" id="message-error">Please enter a message.</span>
+      </div>
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+
+    <section id="bonus-section">
+      <h2>Bonus: Random Fact</h2>
+      <div id="fact-card">
+        <p id="fact-text">Click the button for a random fact.</p>
+        <button id="fact-btn" class="btn" type="button">Get a random fact</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
